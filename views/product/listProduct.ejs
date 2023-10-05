@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        List Product
+    </title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <%- include('../partials/header') %>
+        
+
+            <div class="row  py-2 ">
+                <h3 class="">List Product</h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a style="font-weight: 800;" href="/">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Products</li>
+                    </ol>
+                </nav>
+            </div>
+
+
+            <form method="get">
+                <div class="row py-2 px-1 bg-body-secondary ms-1 me-1 rounded-top-1">
+                    <h4 class="col col-lg-1  ">Toolbar</h4>
+                    <div class="col col-lg-3">
+                        <input type="text" name="username" class="form-control" placeholder="Search with name product"
+                            aria-label="First name">
+                    </div>
+                    <!-- <div class="col col-lg-3">
+                        <input type="text" name="email" class="form-control" placeholder="Search with category"
+                            aria-label="Last name">
+                    </div> -->
+                    <select class="form-select col me-2  " name="gid" aria-label="Default select example">
+                        <option selected>Search by category</option>
+                        <option value="1">Phone</option>
+                        <option value="2">Laptop</option>
+                        <option value="3">Pc</option>
+                    </select>
+
+                    <select class="form-select col  " name="gid" aria-label="Default select example">
+                        <option selected>Search by price range</option>
+                        <option value="1"> Dưới 1 triệu </option>
+                        <option value="2">Từ 1 - 3 triệu</option>
+                        <option value="3"> Trên 3 triệu</option>
+                    </select>
+
+                    <div class="col col-lg-1">
+                        <button class="btn btn-secondary" type="submit">Search</button>
+                    </div>
+
+                    <a class="col col-lg-1 btn btn-outline-success" data-bs-toggle="modal" style="width: 100px;"
+                        data-bs-target="#ModalAddProduct" role="button">ADD</a>
+                </div>
+            </form>
+
+            <%- include('add_product') %>
+         
+
+                <div class="row ms-1 me-1 ">
+
+                    <%- include('../product/show_prod') %>
+
+                    <div class="row">
+                        <span class="col-10 me-2">Đang xem 1 trong tổng số 3 mục</span>
+                        <div class="ms-5 btn-group col" style="height: 35px;" role="group"
+                            aria-label="Basic checkbox toggle button group">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+
+                </div>
+                <%- include('../partials/footer') %>
+    </div>
+
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        List User
+    </title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <%- include('../partials/header') %>
+
+
+            <div class="row  py-2 ">
+                <h3 class="">List User</h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a style="font-weight: 800;" href="/">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Users</li>
+                    </ol>
+                </nav>
+            </div>
+
+
+            <form method="post" action="">
+                <div class="row py-2 px-1 bg-body-secondary ms-1 me-1 rounded-top-1">
+                    <h4 class="col col-lg-1  ">Toolbar</h4>
+                    <div class="col col-lg-3">
+                        <input type="text" id="inputSearchUsername" name="username" class="form-control"
+                            placeholder="Search with username" aria-label="First name">
+                    </div>
+
+                    <div class="col col-lg-3">
+                        <input type="text" name="email" class="form-control" placeholder="Search with email"
+                            aria-label="Last name">
+                    </div>
+
+                    <select class="form-select col " name="role" aria-label="Default select example">
+                        <option selected value="2">All</option>
+                        <option value="1">Admin</option>
+                        <option value="0">User</option>
+                    </select>
+
+                    <div class="col col-lg-1">
+                        <button class="btn btn-secondary" type="submit">Search</button>
+                    </div>
+
+                    <% if (Uname.role==1) {%>
+                        <a class="col col-lg-1 btn btn-outline-success" data-bs-toggle="modal" style="width: 100px;"
+                            data-bs-target="#ModalAddUser" role="button">ADD</a>
+                        <%}%>
+                </div>
+            </form>
+
+
+
+            <%- include('add_user') %>
+
+
+
+                <div class="row ms-1 me-1 ">
+
+                    <%- include('../user/show_user') %>
+
+                        <div class="row">
+                            <span class="col-10 me-2">Đang xem 1 trong tổng số 3 mục</span>
+                            <div class="ms-5 btn-group col" style="height: 35px;" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+                                        <!-- <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+
+                </div>
+                <%- include('../partials/footer') %>
+    </div>
+
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./javascripts/jquery-3.6.4.min.js"></script>
+    <script src="./javascripts/page_users.js"></script>
+    <!-- <script src="./javascripts/filter_prod.js"></script> -->
+</body>
+
+</html>

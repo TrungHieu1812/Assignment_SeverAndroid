@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        List Product
+    </title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <%- include('../partials/header') %>
+
+
+            <div class="row py-2 ">
+                <h3 class="">List Product</h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a style="font-weight: 800;" href="/">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page" ><a style="font-weight: 800;" href="/products">Products</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Details</li>
+                    </ol>
+                </nav>
+            </div>
+
+            <section class="bg-body-secondary" style="width:auto; height: auto;">
+                <div class="container py-5 ">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col col-xl-10">
+                            <div class="card pb-5" style="border-radius: 1rem; ">
+                                <div class="row g-0 ">
+                                    <div class="col-md-6 col-lg-5 d-none d-md-block ">
+                                        <img src="<%= objProd.image %>" style="width: 400px; height: 400px;"
+                                            alt="login form" class="img-fluid mt-5 ms-2" style="border-radius: 1rem 0 0 1rem;" />
+                                    </div>
+                                    <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                                        <div class="card-body p-4 p-lg-5 text-black">
+
+                                            <form>
+                                                <div class="d-flex align-items-center mb-3 pb-1">
+                                                    <span class="h1 fw-bold mb-0"><%= objProd.name %></span>
+                                                </div>
+
+                                                <h5 class="fw-normal mb-2 pb-3" style="letter-spacing: 1px;">Price : <%= objProd.price %></h5>
+
+                                                <h5 class="fw-normal mb-2 pb-3" style="letter-spacing: 1px;">Description : <%= objProd.description %></h5>
+
+                                                <h5 class="fw-normal mb-2 pb-3" style="letter-spacing: 1px;">Quantity : <%= objProd.qty %></h5>
+
+                                                <h5 class="fw-normal mb-2 pb-3" style="letter-spacing: 1px;">Category : <%= objProd.id_cat.name %></h5>
+
+                                               
+
+                                                <div class="mb-5">
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- <%- include('../partials/footer') %> -->
+    </div>
+
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
